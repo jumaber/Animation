@@ -136,6 +136,21 @@ body {
 }
 
 
+#brain_2{
+    animation: pulse 2s linear infinite;
+}
+
+@keyframes pulse {
+    0%{
+        background-color: red;
+    }
+
+    100%{
+        background-color:purple;
+    }
+}
+
+
 /********* Card 2: Navigate Space ********/
 #modal {
     background-color: white;
