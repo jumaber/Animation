@@ -1,0 +1,231 @@
+/******** Typography ********/
+
+h1{
+font-family: 'Inter', sans-serif;
+    font-size: 1.8em;
+    font-weight: 600;
+    color: #1d1d1f;
+}
+
+h2{
+font-family: 'Inter', sans-serif;
+    font-size: 1.4em;
+    font-weight: 600;
+    color:#1d1d1f;
+}
+
+h3{
+font-family: 'Inter', sans-serif;
+    font-size: 1.2em;
+    font-weight: 500;
+    color: #1d1d1f;
+}
+
+h4{
+font-family: 'Inter', sans-serif;
+    font-size: 1.1em;
+    font-weight: 500;
+    color: #1d1d1f;
+}
+
+p{
+font-family: 'Inter', sans-serif;
+    font-size: 1em;
+    font-weight: 300;
+    color: #1d1d1f;
+}
+
+/******** Structure ********/
+
+body {
+    background-color: #f1f1f1;
+}
+.main-container{
+    margin: 16px ;
+}
+
+
+.column-title{
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    padding-bottom: 24px;
+    width:100%;
+}
+
+
+/********* Cards *********/
+
+.cards-wrapper{
+    display: flex;
+    flex-direction: row;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    padding-bottom: 5%;
+    cursor: pointer;
+}
+
+.card{
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-between;
+    border: 1px #cccccc;
+    border-radius: 20px;
+    padding: 24px;
+    margin-bottom: 16px;
+    text-align: center;
+    background: white;
+    box-shadow: 2px 4px 12px rgba(0,0,0,.08), -2px -4px 12px rgba(0,0,0,.08);
+    transition: 0.2s ease-in-out;
+    flex-basis: 100%;
+}
+
+.card:hover{
+    transform: scale(1.005);
+    box-shadow: 2px 4px 12px rgba(0,0,0,.1), -2px -4px 12px rgba(0,0,0,.1);
+}
+
+.card-content{
+    padding-top: 16px;
+    text-align: left;
+}
+
+.card-image{
+    display: flex;
+    align-items: flex-start;
+    width: 50%; 
+    max-height: 250px;   
+}
+
+/******** Animations ********/
+
+/******** Card 1: Cognitive Load ********/
+
+#blitz{
+    transform-origin: 50% 50%;
+    transform-box: fill-box;
+    animation: beat 2s linear infinite,
+    fade 1s linear infinite alternate-reverse; 
+}
+
+@keyframes beat {
+    0%, 100% {
+        transform: scale(1);
+        }
+    50% {
+        transform: scale(1.25);
+        }
+    100% {
+        transform: scale(1);
+            }
+}
+
+@keyframes fade {
+
+    0% {
+        fill: #F8DC49;
+        fill-opacity: 50%;
+    }
+    100%{
+        fill: #F8DC49;
+        fill-opacity: 100%;
+    }
+}
+
+
+/********* Card 2: Navigate Space ********/
+#modal {
+    background-color: white;
+    transform-origin: 50% 50%;
+    transform-box: fill-box;
+    animation: move-down 10s ease-in-out infinite ;
+
+}
+
+@keyframes move-down {
+
+    0%{
+        transform:translateY(100%);
+    }
+    40%{
+        transform:translateY(0%);
+        opacity: 100%;
+    }
+    100%{
+        transform:translateY(100%);
+    }  
+}
+
+test
+
+#phone{
+    animation: phone-background 10s linear infinite;
+  
+}
+
+@keyframes phone-background{
+    0%{
+        fill: #fff;
+    }
+    50%{
+        fill: #141414;
+        fill-opacity:30%;
+    }
+    100%{
+        fill: #fff;
+    }  
+}
+
+/********* Card 3: Communicate Time *********/
+.progressive-bar {
+    margin: 16px 0px;
+    height: 12px;
+    width: 208px;
+    border-radius: 8px;
+    border-left: none;
+    background-color: #141414;
+    animation: time 5s linear infinite;
+}
+
+
+@keyframes time {
+ from {
+    width: 208px;
+    border-left: 0px solid greenyellow;
+ }
+
+ to{
+    width: 0px;
+    border-left: 208px solid greenyellow;
+ }
+   
+}
+ 
+
+/********** Media Queries **********/
+
+/* ==============================
+Medium devices such as iPad (620px until 1023px)
+================================= */
+/*@media (min-width:620px) and (max-width:1023px){
+    .card{
+        margin-left: 16px;
+        flex-basis: 30%;
+        flex-shrink: 3;
+    }
+}
+
+
+/* ==============================
+Large devices such as Desktop (1024px until 1440px)
+================================= */
+/*@media (min-width: 1024px) {
+}
+
+.card{
+    margin-left: 16px;
+    flex-basis: 25%;    
+}*/
