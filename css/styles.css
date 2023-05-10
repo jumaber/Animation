@@ -199,6 +199,11 @@ body {
 
 /******** Card 1: Cognitive Load ********/
 
+.card-1:hover{
+    background-color: #F8DC49;
+    transition: 2s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
 #blitz{
     transform-origin: 50% 50%;
     transform-box: fill-box;
@@ -242,6 +247,12 @@ body {
 
 
 /********* Card 2: Navigate Space ********/
+
+.card-2:hover{
+    background-color: #FF1E1E;
+    transition: 2s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
 #modal {
     background-color: white;
     transform-origin: 50% 50%;
@@ -296,6 +307,13 @@ body {
 }
 
 /********* Card 3: Communicate Time *********/
+
+.card-3:hover{
+    background-color: #5E44FF;
+    transition: 2s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+
 .progressive-bar {
     height: 20px;
     border-radius: 10px;
@@ -319,8 +337,9 @@ body {
 }
 /********* Card 4: Grab Attention *********/
 
-#card-4{
-/*    background-color: rgb(94, 68, 255);*/
+.card-4:hover{
+    background-color: #FF00B8;
+    transition: 2s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 #card{
@@ -377,28 +396,134 @@ body {
     100% { transform: scale(1); rotate: 360deg;}
 }
 
+/********* Card 5: Transport Emotion *********/
+
+.card-5:hover{
+    background-color: #5E44FF;
+    transition: 2s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.card-3 .card-content:hover h3, .card-5 .card-content:hover h3{
+    color: #fff;
+}
+
+#heart{
+    transform-origin: 50% 50%;
+    transform-box: fill-box;
+    fill: #FF1E1E;
+    stroke: #FF00B8;
+    animation: heart-beat 3s cubic-bezier(0.165, 0.84, 0.44, 1) 2s infinite;
+}
+
+@keyframes heart-beat {
+    0%, 100% {
+        transform: scale(0.7);
+    }
+    20%{
+        transform: scale(0.9);
+    }
+    40%{
+        transform: scale(0.7);
+    }
+}
+
+/********* Card 6: Transport Emotion *********/
+
+.card-6:hover{
+    background-color: #F8DC49;
+
+}
+.brand-1{
+    color: #5E44FF;
+}
+
+.brand-2{
+    color: #F8DC49;
+}
+
+.brand-3{
+    color: #FF00B8;
+    font-weight: 900;
+    perspective: 1000px;
+    transform-origin: 50% 50%;
+    transform-box: fill-box;
+    animation: fall 1s ease-in alternate-reverse 0.5s infinite both;
+
+}
+
+.brand-3:hover{
+    transform: rotate(30deg);
+    transition: 0.5s linear;
+}
+
+@keyframes fall {
+    0%{
+        transform: rotateX(0deg);
+    }
+    100%{
+        transform: rotateX(360deg);
+    }
+}
 
 /********** Media Queries **********/
 
 
-/* Small devices (tablets, 620px and up) */
-@media only screen and (min-width: 620px) {
-    .card{
-        margin-left: 16px;
-        flex-basis: 30%;
-        flex-shrink: 3;
+/* Small devices (tablets, px and up) */
+@media only screen and (min-width: 704px) {
+    .cards-wrapper{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+
     }
+    .card{
+        flex-shrink: 2;
+        flex-basis: 40%;
+        margin-right: 16px;
+    }
+
+    .main-container{
+        margin: 16px 32px ;
+    }
+    
 }
 
 
-/* Extra large devices (large laptops and desktops, 1024px and up) */
-@media only screen and (min-width: 1024px) {
-    .card{
-        margin-left: 16px;
-        flex-basis: 20%;    
-    }
-    .main-container{
-        margin: 124px ;
+/* Extra large devices (small laptops and portrait tablets, 1048px and up) */
+@media only screen and (min-width: 1048px) {
+    
+    .cards-wrapper{
+        display: flex;
+        flex-direction: row;
+
     }
     
+    .card{
+        flex-basis: 40%;
+        margin-left: 16px;
+    }
+
+    .main-container{
+        margin: 80px 124px ;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1024px and up) */
+@media only screen and (min-width: 1440px) {
+    
+    .cards-wrapper{
+        display: flex;
+        flex-direction: row;
+
+    }
+    
+    .card{
+        flex-basis: 25%;
+        margin-left: 16px;
+    }
+
+    .main-container{
+        margin: 80px 124px ;
+    }
 }
