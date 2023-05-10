@@ -28,6 +28,18 @@ h4{
     color: #1d1d1f;
 }
 
+a{
+    color: #5E44FF;
+}
+
+a:hover, a:visited{
+    color: #FF00B8;
+}
+
+a:active{
+    color: #FF1E1E;
+}
+
 p{
     font-family: 'Inter', sans-serif;
     font-size: 1em;
@@ -40,8 +52,13 @@ p{
 body {
     background-color: #f1f1f1;
 }
+
 .main-container{
     margin: 16px ;
+}
+
+.cards-wrapper{
+    margin-bottom: 80px;
 }
 
 
@@ -49,7 +66,7 @@ body {
     display: flex;
     flex-direction: column;
     align-content: flex-start;
-    padding-bottom: 32px;
+    padding-bottom: 16px;
     width:100%;
 }
 
@@ -403,10 +420,6 @@ body {
     transition: 2s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
-.card-3 .card-content:hover h3, .card-5 .card-content:hover h3{
-    color: #fff;
-}
-
 #heart{
     transform-origin: 50% 50%;
     transform-box: fill-box;
@@ -465,6 +478,8 @@ body {
     }
 }
 
+/********** Links **********/
+
 /********** Media Queries **********/
 
 
@@ -496,7 +511,6 @@ body {
     .cards-wrapper{
         display: flex;
         flex-direction: row;
-
     }
     
     .card{
@@ -506,6 +520,21 @@ body {
 
     .main-container{
         margin: 80px 124px ;
+    }
+
+    .links-wrapper{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+
+    .links{
+        display: flex;
+        flex-direction: column;
+        max-width: 100%;
+        flex-shrink: 2;
+        margin-right: 42px;
+
     }
 }
 
