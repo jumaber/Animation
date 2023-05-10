@@ -45,76 +45,122 @@ body {
 }
 
 
-.column-title{
+.section-title{
     display: flex;
     flex-direction: column;
     align-content: flex-start;
-    padding-bottom: 24px;
+    padding-bottom: 32px;
     width:100%;
 }
 
-/********* Intro *********
+/********* Intro *********/
 
-.var{
-    color:#1d1d1f;
-    animation: var 2s linear 1;
+.intro-title{
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    padding-bottom: 32px;
+    width:100%;
 }
 
-@keyframes var {
+.julia {
+    display: flex;
+    font-family: 'Inter', sans-serif;
+    font-size: 52px;
+    font-weight: 900;
+    color: #5E44FF;
+    text-align: left;
+    animation: slide-in 1s ease-in-out;
+}
+@keyframes slide-in {
+    0% { 
+        transform: translateY(-500px);
+    }
+    70% {             
+        transform: translateY(40px);
+    }
+    100% { 
+        transform: translateY(0);
+    }
+}
+        
+.css{
+    display: flex;
+    font-family: 'Inter', sans-serif;
+    font-size: 64px;
+    font-weight: 900;
+    color: #FF00B8;
+    text-align: left;
 
-    0%, 100% {
-        font-variation-settings: "wght" 600, "slnt" 0;
-        color: #5E44FF;
-    }
-
-    25% {
-        font-variation-settings: "wght" 500, "slnt" -4;
-        color: #FF00B8;
-    }
-    50% {
-        font-variation-settings: "wght" 400, "slnt" -6;
-        color: #FF1E1E;
-    }
-    75% {
-        font-variation-settings: "wght" 500, "slnt" -10;
-        color: #F8DC49;
-    }
-
+    animation-name: dissolve-css;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+}
+@keyframes dissolve-css {
+    0% { opacity: 0%;}
+    50% { opacity: 0%;}
+    100% { opacity: 100%;}
 }
 
-.path-wrapper{
-    width:800px;
+.playground{
+    display: flex;
+    font-family: 'Inter', sans-serif;
+    font-size: 40px;
+    font-weight: 900;
+    color: #F8DC49;
+    text-align: left;
+    animation: slide-in-later 2.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+@keyframes slide-in-later {
+    0% { 
+        transform: translateX(1000px);
+        opacity: 0%;
+    }
+    80% {             
+        transform: translateX(1000px);
+        opacity: 0%;
+    }
+    90%{
+        transform: translateX(-40px);
+        opacity: 100%
+    }
+    100% { 
+        transform: translateX(0);
+        opacity: 100%;
+    }
+}
+        
+.dot{
+    color: #FF1E1E;
+    font-size: 48px;
+    transform: translateY(-5px);
+    animation: stamp 2.75s ease-in;    
 }
 
-.bee{
-    width: 300px;
-    offset-path: path('M0.5 139C25 82.6667 106.5 -20.8 236.5 16C399 62 401.817 230.993 383.5 266.5C351 329.5 224.5 361.5 174 260C123.5 158.5 310.5 4 416 0.999998C500.4 -1.4 601.167 92 641 139');
-    animation: move-around 9s ease-in-out;
+@keyframes stamp {
+    0% { 
+        transform: scale(0);
+        display: none;   
+    }
+    90%{
+        transform: scale(0);   
+        display: contents;
+    }
+    95%{
+        transform: scale(2);   
+        display: contents;
+    }
+    100% { 
+        transform: scale(1);   
+    }
 }
 
-@keyframes moving-around {
-    0% {
-        offset-distance: 0%;
-    }
-
-    100% {
-        offset-distance: 100%;
-    }
+.third-line{
+    display: flex;
+    flex-direction: row;
 }
 
 /********* Cards *********/
-
-.cards-wrapper{
-    display: flex;
-    flex-direction: row;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-content: flex-start;
-    align-items: flex-start;
-    width: 100%;
-    padding-bottom: 5%;
-    cursor: pointer;
-}
 
 .card{
     display: flex;
@@ -334,10 +380,9 @@ body {
 
 /********** Media Queries **********/
 
-/* ==============================
-Medium devices such as iPad (620px until 1023px)
-================================= */
-/*@media (min-width:620px) and (max-width:1023px){
+
+/* Small devices (tablets, 620px and up) */
+@media only screen and (min-width: 620px) {
     .card{
         margin-left: 16px;
         flex-basis: 30%;
@@ -346,13 +391,14 @@ Medium devices such as iPad (620px until 1023px)
 }
 
 
-/* ==============================
-Large devices such as Desktop (1024px until 1440px)
-================================= */
-/*@media (min-width: 1024px) {
+/* Extra large devices (large laptops and desktops, 1024px and up) */
+@media only screen and (min-width: 1024px) {
+    .card{
+        margin-left: 16px;
+        flex-basis: 20%;    
+    }
+    .main-container{
+        margin: 124px ;
+    }
+    
 }
-
-.card{
-    margin-left: 16px;
-    flex-basis: 25%;    
-}*/
