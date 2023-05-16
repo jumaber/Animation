@@ -70,6 +70,22 @@ body {
     width:100%;
 }
 
+.cards-wrapper {
+    animation: expand 3s cubic-bezier(0.95, 0.05, 0.795, 0.035);
+}
+
+@keyframes expand {
+
+    0% {
+       opacity: 0%;
+    }
+
+    100% {
+        opacity: 100%;      
+    }
+
+}
+
 /********* Intro *********/
 
 .intro-title{
@@ -137,7 +153,7 @@ body {
         transform: translateX(1000px);
         opacity: 0%;
     }
-    90%{
+    90% {
         transform: translateX(-40px);
         opacity: 100%
     }
@@ -212,6 +228,7 @@ body {
     height: 250px;
 }
 
+
 /******** Animations ********/
 
 /******** Card 1: Cognitive Load ********/
@@ -282,7 +299,6 @@ body {
 
     0%, 65%, 100% {
         transform:translateY(105%);
-
     }
 
     15%{
@@ -307,12 +323,10 @@ body {
         fill: #fff;
         fill-opacity: 100%;
     }
-
     15%{
         fill: #5E44FF;
         fill-opacity: 100%;
     }
-
     50%{
         fill: #5E44FF;
         fill-opacity: 100%;
@@ -323,13 +337,13 @@ body {
     fill: #FF00B8;
 }
 
+
 /********* Card 3: Communicate Time *********/
 
 .card-3:hover{
     background-color: #5E44FF;
     transition: 2s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
-
 
 .progressive-bar {
     height: 20px;
@@ -338,7 +352,6 @@ body {
     background-color: #FF00B8;
     animation: time 5s linear infinite;
 }
-
 
 @keyframes time {
  from {
@@ -349,9 +362,10 @@ body {
  to{
     width: 100%;
     border-left: 232px solid #F8DC49;
- }
-   
+ } 
 }
+
+
 /********* Card 4: Grab Attention *********/
 
 .card-4:hover{
@@ -515,7 +529,7 @@ body {
     
     .card{
         flex-basis: 40%;
-        margin-left: 16px;
+        margin-right: 16px;
     }
 
     .main-container{
@@ -544,7 +558,6 @@ body {
     .cards-wrapper{
         display: flex;
         flex-direction: row;
-
     }
     
     .card{
